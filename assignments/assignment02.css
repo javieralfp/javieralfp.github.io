@@ -46,15 +46,60 @@ img[alt="cat icon"]{
     height: 200;
     position: absolute;
     right: 0;
-    bottom: 0;*/
+    bottom: 0;
     position: relative;
     left: 500px;
-    top: 200px;
-
+    top: 200px;*/
+    position: fixed;
+    bottom: 0;
+    right: 0;
 
 }
 
+/*
+Force dog icon to appear 50 pixels to the LEFT and 150 pixels ABOVE where it
+WOULD HAVE BEEN had no CSS position property been applied.
+position: relative;
 
+Force the bird icon to appear inside the orange DIV (see expected results file)
+in front of the text 50 pixels below the top of the DIV and 250 pixels to the
+right of the left edge of the DIV. 
+*/
+img[alt="dog icon"]{
+    position: relative;
+    right: 50px;
+    bottom: 150px;
+}
+
+img[alt="bird icon"]{
+    position: relative;
+    top: 50px;
+    left: 250px;
+}
+
+/*
+9) Part C: Make the nav bar stick to the top of the browser window,
+in front of all other elements, and set the nav bar background color
+to green, with 90% opacity. Set nav bar padding: 5px; and font-size: 20px;
+*/
+nav{
+    position: sticky;
+    top: 0;
+    background-color: rgb(0, 255, 0, .9);
+    padding: 5px;
+    font-size: 20px;
+}
+
+/*
+10) Part D: Apply pre-existing CSS classes to HTML table, form
+stripey class - zebra-stripes the table rows
+mousey class - sets table cell background color to yellow on mouse hover
+rightey class - right-aligns text in table cells
+pinkey - set background color pink when form input box is in focus (focus is when the typing cursor is in the input box)
+*/
+table{
+    stripey: even;
+}
 
 
 
@@ -68,7 +113,7 @@ img[alt="cat icon"]{
 
 
 /* --- pre-existing css --- */
-.stripey tr:nth-child(even) {
+  .stripey tr:nth-child(even) {
     background-color: gray;
   }
   .stripey tr:nth-child(odd) {
