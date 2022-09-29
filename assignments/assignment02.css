@@ -27,17 +27,18 @@ span{
     background-color: yellow;
 }
 
-.a span{
+.a{
     /* word-wrap normally (default for SPANs), and observe that height property SHOULD NOT WORK on these SPANs */
-    height: auto;
+    
+    display: inline;
 }
-.b span{
+.b{
     /* the SPANs should appear stacked on top of each other */
-
+  display: block;
 }
-.c span{
+.c{
     /* the SPANs should word-wrap, but the height property SHOULD WORK */
-
+  display: inline-block;
 }
 
 img[alt="cat icon"]{
@@ -90,17 +91,6 @@ nav{
     font-size: 20px;
 }
 
-/*
-10) Part D: Apply pre-existing CSS classes to HTML table, form
-stripey class - zebra-stripes the table rows
-mousey class - sets table cell background color to yellow on mouse hover
-rightey class - right-aligns text in table cells
-pinkey - set background color pink when form input box is in focus (focus is when the typing cursor is in the input box)
-*/
-table{
-    stripey: even;
-}
-
 
 
 /* external css is imported into html using the <link> tag in the <head> section, as shown below.
@@ -111,6 +101,14 @@ table{
 
 */
 
+
+/*
+10) Part D: Apply pre-existing CSS classes to HTML table, form
+stripey class - zebra-stripes the table rows
+mousey class - sets table cell background color to yellow on mouse hover
+rightey class - right-aligns text in table cells
+pinkey - set background color pink when form input box is in focus (focus is when the typing cursor is in the input box)
+*/
 
 /* --- pre-existing css --- */
   .stripey tr:nth-child(even) {
