@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment03</title>
+    <!--    <link rel="stylesheet" href="style.css">    -->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    
+    <!-- 03A. Convert Fahrenheit to Celsius -->
+    <form>
+        <fieldset>
+            <legend>Convert Fahrenheit to Celsius</legend>
+            <label>Fahrenheit</label><br> <!--for="f" -> this is to bind the label to the input below; but why is this necessary?-->
+            <input type="text"/> <!--id="f"-->
+            <!--add button to convert f to c-->
+            <input type="button" value="Convert"> <!--onclick="" add the js function here-->
+        </fieldset>
+    </form>
+    <script>
+        /*
+        make your conversion function in here which is called by convert button
+        */
+       function convert(far){
+        let cel = (far - 32) * (5 / 9);
+        return cel;
+       }
+    </script>
+
+
+
+  </body>
+</html>
