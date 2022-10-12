@@ -3,33 +3,65 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment03</title>
-    <!--    <link rel="stylesheet" href="style.css">    -->
     <script src="assignment03.js"></script>
   </head>
   <body>
-    
-    <!-- 03A. Convert Fahrenheit to Celsius -->
+    <!--
+      03A. Convert Fahrenheit to Celsius
+    -->
+    <h2>03A. Convert Fahrenheit to Celsius</h2>
     <form>
         <fieldset>
             <legend>Convert Fahrenheit to Celsius</legend>
-            <label>Fahrenheit</label><br> <!--for="f" -> this is to bind the label to the input below; but why is this necessary?-->
-            <input id="f" type="text"/> <!--id="f"-->
-            <!--add button to convert f to c-->
-            <input type="button" value="Convert" onclick="convert(document.getElementById('f').value)"><br> <!--onclick="" add the js function here ... "convert('f')"-->
-            <!-- 'f' <- putting this in the function didn't work -->
-            <!--textbox that shows output-->
+            <label>Fahrenheit</label><br>
+            <input id="f" type="text"/>
+            <!--conversion button-->
+            <input type="button" value="Convert" onclick="convert(document.getElementById('f').value)"><br>
+            <!--conversion output-->
             <label>Celsius</label><br>
             <input id="c" type="text" disabled />
         </fieldset>
     </form>
+    <!--conversion function (internal js)-->
     <script>
-        /*
-        make your conversion function in here which is called by convert button
-        */
        function convert(far){
         let cel = (far - 32) * (5 / 9);
         document.getElementById("c").value=cel;
        }
     </script>
+
+    <!--
+      03B. Find GCD
+    -->
+    <h2>03B. Find GCD</h2>
+    <!--labels and input boxes-->
+    <label>Number 1</label>
+    <input id="n1" type="text" /> <br>
+    <label>Number 2</label>
+    <input id="n2" type="text" /> <br>
+    <!--button and output-->
+    <input type="button" value="Find GCD" onclick="findGCD()" /> <br>
+    <label>GCD</label>
+    <input id="gcd" type="text" disabled />
+
+    <!--
+      03C. Compute sum of digits
+
+      learn react
+      python machine learning
+      google dev club
+      cardinal robotics club
+    -->
+    <h2>03C. Compute sum of digits</h2>
+    <!--stuuuff-->
+    <label>Number</label>
+    <input id="num" type="text" /> <br/>
+    <input type="button" value="Submit" onclick="sum()" /> <br/>
+    <lable>Sum of digits</lable>
+    <input id="sum" type="text" disabled /> <br/>
+
+
+
+
   </body>
 </html>
