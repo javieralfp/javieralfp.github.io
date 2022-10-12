@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Assignment03</title>
     <!--    <link rel="stylesheet" href="style.css">    -->
-    <script src="script.js"></script>
+    <script src="assignment03.js"></script>
   </head>
   <body>
     
@@ -13,9 +13,13 @@
         <fieldset>
             <legend>Convert Fahrenheit to Celsius</legend>
             <label>Fahrenheit</label><br> <!--for="f" -> this is to bind the label to the input below; but why is this necessary?-->
-            <input type="text"/> <!--id="f"-->
+            <input id="f" type="text"/> <!--id="f"-->
             <!--add button to convert f to c-->
-            <input type="button" value="Convert"> <!--onclick="" add the js function here-->
+            <input type="button" value="Convert" onclick="convert(document.getElementById('f').value)"><br> <!--onclick="" add the js function here ... "convert('f')"-->
+            <!-- 'f' <- putting this in the function didn't work -->
+            <!--textbox that shows output-->
+            <label>Celsius</label><br>
+            <input id="c" type="text" disabled />
         </fieldset>
     </form>
     <script>
@@ -24,11 +28,8 @@
         */
        function convert(far){
         let cel = (far - 32) * (5 / 9);
-        return cel;
+        document.getElementById("c").value=cel;
        }
     </script>
-
-
-
   </body>
 </html>
