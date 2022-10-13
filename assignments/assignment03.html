@@ -3,9 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment03</title>
-    <script src="assignment03.js"></script>
   </head>
   <body>
+<!-- 
+    Filename:    assignment03.html.html
+    Author:      Javier Perez (japerez1@svsu.edu)
+    Description:  Convert Fahrenheit to Celsius
+                  Find GCD
+                  Compute sum of digits
+                  Generate new string from input fields
+                  tic tac toe
+ -->
+
     <!--
       03A. Convert Fahrenheit to Celsius
     -->
@@ -36,9 +45,9 @@
     <h2>03B. Find GCD</h2>
     <!--labels and input boxes-->
     <label>Number 1</label>
-    <input id="n1" type="text" /> <br>
+    <input id="n1" type="text" > <br>
     <label>Number 2</label>
-    <input id="n2" type="text" /> <br>
+    <input id="n2" type="text" > <br>
     <!--button and output-->
     <input type="button" value="Find GCD" onclick="findGCD()" /> <br>
     <label>GCD</label>
@@ -46,22 +55,61 @@
 
     <!--
       03C. Compute sum of digits
-
-      learn react
-      python machine learning
-      google dev club
-      cardinal robotics club
     -->
     <h2>03C. Compute sum of digits</h2>
-    <!--stuuuff-->
+    <!--textboxes and display sum of digits-->
     <label>Number</label>
     <input id="num" type="text" /> <br/>
     <input type="button" value="Submit" onclick="sum()" /> <br/>
-    <lable>Sum of digits</lable>
+    <label>Sum of digits</label>
     <input id="sum" type="text" disabled /> <br/>
 
+    <!--
+      03D. Generate new string from input fields
+    -->
+    <h2>03D. Generate new string from input fields</h2>
+    <!--title-->
+    <label>Title</label>
+    <select id="title">
+      <option>No Title</option>
+      <option>Dr.</option>
+      <option>Mr.</option>
+      <option>Mrs.</option>
+      <option>Ms.</option>
+      <option>Lord</option>
+      <option>Lady</option>
+      <option>Master</option>
+    </select><br>
+    <!--first name-->
+    <label>First Name</label>
+    <input id="fn" type="text" required><br>  <!--CHECK IF REQUIRED DOES ANYTHING!!!!!!!!!!!!!!!!-->
+    <!--last name-->
+    <label>Last Name</label>
+    <input id="ln" type="text" required><br>
+    <!--suffix-->
+    <label>Suffix</label>
+    <select id="suffix">
+      <option>No Suffix</option>
+      <option>Jr.</option>
+      <option>Sr.</option>
+      <option>I</option>
+      <option>II</option>
+      <option>III</option>
+      <option>IV</option>
+    </select><br>
+    <!--generate full name-->
+    <input type="button" value="Generate Full Name" onclick="generateFullName()"><br>
+    <!--full name-->
+    <label>Full Name</label><br>
+    <input id="fullName" type="text" disabled>
+
+    <!--
+      03E. Tic-Tac-Toe game
+    -->
 
 
 
+    
+    <script src="assignment03.js"></script>
   </body>
 </html>
