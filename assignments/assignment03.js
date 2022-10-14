@@ -95,8 +95,22 @@ function generateFullName(){
         fullName += ", " + document.getElementById('suffix').value;
     }
     
-    //Display full name
-    document.getElementById('fullName').value = fullName;
+    //Display full name if first name and last name are not empty
+    if(document.getElementById('fn').value != "" && document.getElementById('ln').value != ""){
+        document.getElementById('fullName').value = fullName;
+    }
+    //Inform user of emtpy fields
+    if(document.getElementById('fn').value == "" && document.getElementById('ln').value == ""){
+        alert("Please fill in first and last name.");
+    }
+    else if(document.getElementById('fn').value == ""){
+        alert("Please fill in first name.");
+    }
+    else if(document.getElementById('ln').value == ""){
+        alert("Please fill in last name.");
+    }
+
+}
 
     /*
     Write external JavaScript to implement the game, Tic-Tac-Toe. Use your 
@@ -106,7 +120,3 @@ function generateFullName(){
     
     03E. Tic-Tac-Toe game
     */
-
-}
-
-
