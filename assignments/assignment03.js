@@ -119,4 +119,119 @@ function generateFullName(){
     game stops. The 3E section of your web page should look something like this:
     
     03E. Tic-Tac-Toe game
+
+    I coded this following this video's tutorial:
+    https://www.youtube.com/watch?v=P2TcQ3h0ipQ&t=1194s
     */
+
+    var origBoard;
+    const huPlayer = "O";
+    const aiPlayer = "X";
+    const winCombos = [
+        //horizontals
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        //verticals
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        //diagonals
+        [0, 4, 8],
+        [2, 4, 6]
+    ]
+
+//Array of all the board cells
+const cells = document.querySelectorAll('.cell');
+startGame();
+
+function startGame(){
+    //Get rid of display at the end of the game
+    document.querySelector(".endgame").getElementsByClassName.display = "none";
+    origBoard = Array.from(Array(9).keys());
+    for(var i = 0; i < cells.length; i++){
+        //Reset the board cells
+        cells[i].innerText = "";
+        cells[i].style.removeProperty("background-color");
+        //Adds event for each square which calls turnClick function upon click event
+        cells[i].addEventListener("click", turnClick, false);
+    }
+}
+
+function turnClick(square){
+    //Doesn't do anything if clicked cell has already been clicked
+    if(typeof origBoard[square.target.id] == 'number'){
+        turn(square.target.id, huPlayer);
+        //If no tie then do ai turn
+        if(!checkTie()){
+            turn(bestSpot(), aiPlayer);
+        }
+    }
+}
+
+function turn(squareId, player){
+    //Set X or O on the board
+    origBoard[squareId] = player;
+    document.getElementById(squareId).innerText = player;
+    let gameWon = checkWin(origBoard, player);
+    if(gameWon){
+        gameOver(gameWon);
+    }
+}
+
+function checkWin(board, player){
+    let plays = board.reduce((a, e, i) =>
+        (e === player) ? a.concat(i) : a, []);
+    let gameWon = null;
+    for(let [index, win] of winCombos.entries()){
+        //index of possible wins
+        //win = current element of index
+        if(win.every(elem => plays.indexOf(elem) > -1)){
+            gameWon = {index: index, player: player};
+            break;
+        }
+    }
+    return gameWon;
+}
+
+function gameOver(gameWon){
+    for(let index of winCombos[gameWon.index]){
+        document.getElementById(index).style.backgroundColor =
+        gameWon.player == huPlayer ? "blue" : "red";
+    }
+    //Remove ability to click on cells once game has finished
+    for(var i = 0; i < cells.length; i++){
+        cells[i].removeEventListener("click", turnClick, false);
+    }
+
+    declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose!");
+}
+
+//Display win or lose message
+function declareWinner(who){
+    document.querySelector(".endgame").style.display = "block";
+    document.querySelector(".endgame .text").innerText = who;
+}
+
+//Returns first empty square for ai turn
+function bestSpot(){
+    return emptySquares()[0];
+}
+
+function emptySquares(){
+    return origBoard.filter(s => typeof s == 'number');
+}
+
+function checkTie(){
+    //If there are no empty squares then...
+    if(emptySquares().length == 0){
+        //Set all squares to green
+        for(var i = 0; i < cells.length; i++){
+            cells[i].style.backgroundColor = "green";
+            cells[i].removeEventListener("click", turnClick, false);
+        }
+        declareWinner("Tie Game!");
+        return true;
+    }
+    return false;
+}
