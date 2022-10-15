@@ -47,3 +47,7 @@ table tr td:last-child{
     color: white;
     font-size: 2em;
 }
+
+a{
+    font-size: 50px;
+}
