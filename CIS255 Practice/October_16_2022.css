@@ -1,0 +1,14 @@
+body{
+    background-color: rgba(112, 118, 123, 0.267);
+}
+
+header{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+#square{
+    background-color: blue;
+    height: 20px;
+    width: 100%;
+}
