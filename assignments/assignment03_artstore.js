@@ -48,6 +48,8 @@ const cart = [
 
 calculateNumbers();
 
+//outputCartRow(0, 0);
+
 function calculateTotal(quantity, price){
     let total = quantity * price;
     return total;
@@ -65,4 +67,19 @@ function calculateNumbers(){
 
     //Find grandTotal
     let grandTotal = subTotal + tax;
+}
+
+function outputCartRow(item, total){
+
+    let table = document.getElementById('table-fill');
+
+    //table.insertRow(4).insertCell(1) = "";
+    //table.rows[4].cells[1].innerHTML = "";
+    //table.child
+
+    //for(let i = 0; i < cart.length;){
+        //let newRow = table.insertRow(1);
+    //}
+
+    var row = table.insertRow(4);
 }
