@@ -1,3 +1,9 @@
+<!--
+Filename:    assignment04.js
+Author:      Javier Perez (japerez1@svsu.edu)
+Description: Arrow funtion practice & Scroll through covid data
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,79 +21,100 @@
 
         <form>
             <div class="form-group row">
-              <label for="text1" class="col-2 col-form-label">ID</label> 
+              <label for="ID" class="col-2 col-form-label">ID</label> 
               <div class="col-10">
-                <input id="text1" name="text1" type="text" class="form-control">
+                <input id="ID" name="ID" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text2" class="col-2 col-form-label">Country</label> 
+              <label for="Country" class="col-2 col-form-label">Country</label> 
               <div class="col-10">
-                <input id="text2" name="text2" type="text" class="form-control">
+                <input id="Country" name="Country" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text" class="col-2 col-form-label">Country Code</label> 
+              <label for="CountryCode" class="col-2 col-form-label">Country Code</label> 
               <div class="col-10">
-                <input id="text" name="text" type="text" class="form-control">
+                <input id="CountryCode" name="CountryCode" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text3" class="col-2 col-form-label">Slug</label> 
+              <label for="Slug" class="col-2 col-form-label">Slug</label> 
               <div class="col-10">
-                <input id="text3" name="text3" type="text" class="form-control">
+                <input id="Slug" name="Slug" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text4" class="col-2 col-form-label">New Confirmed</label> 
+              <label for="NewConfirmed" class="col-2 col-form-label">New Confirmed</label> 
               <div class="col-10">
-                <input id="text4" name="text4" type="text" class="form-control">
+                <input id="NewConfirmed" name="NewConfirmed" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text5" class="col-2 col-form-label">Total Confirmed</label> 
+              <label for="TotalConfirmed" class="col-2 col-form-label">Total Confirmed</label> 
               <div class="col-10">
-                <input id="text5" name="text5" type="text" class="form-control">
+                <input id="TotalConfirmed" name="TotalConfirmed" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text6" class="col-2 col-form-label">New Deaths</label> 
+              <label for="NewDeaths" class="col-2 col-form-label">New Deaths</label> 
               <div class="col-10">
-                <input id="text6" name="text6" type="text" class="form-control">
+                <input id="NewDeaths" name="NewDeaths" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text7" class="col-2 col-form-label">Total Deaths</label> 
+              <label for="TotalDeaths" class="col-2 col-form-label">Total Deaths</label> 
               <div class="col-10">
-                <input id="text7" name="text7" type="text" class="form-control">
+                <input id="TotalDeaths" name="TotalDeaths" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text8" class="col-2 col-form-label">New Recovered</label> 
+              <label for="NewRecovered" class="col-2 col-form-label">New Recovered</label> 
               <div class="col-10">
-                <input id="text8" name="text8" type="text" class="form-control">
+                <input id="NewRecovered" name="NewRecovered" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text9" class="col-2 col-form-label">Total Recovered</label> 
+              <label for="TotalRecovered" class="col-2 col-form-label">Total Recovered</label> 
               <div class="col-10">
-                <input id="text9" name="text9" type="text" class="form-control">
+                <input id="TotalRecovered" name="TotalRecovered" type="text" class="form-control">
               </div>
             </div>
             <div class="form-group row">
-              <label for="text10" class="col-2 col-form-label">Date</label> 
+              <label for="Date" class="col-2 col-form-label">Date</label> 
               <div class="col-10">
-                <input id="text10" name="text10" type="text" class="form-control">
+                <input id="Date" name="Date" type="text" class="form-control">
               </div>
             </div> 
+
+            <!--
             <div class="form-group row">
               <div class="offset-2 col-10">
                 <button name="submit" type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
+            -->
+            
+            <div class="form-group row">
+              <div class="offset-2 col-10">
+                <input type="button" value="Load JSON" id="loadjson" class="btn btn-primary">
+                <input type="button" value="Prior Country" id="prior" class="btn btn-primary">
+                <input type="button" value="Next Country" id="next" class="btn btn-primary">
+              </div>
+            </div>
+
           </form>
     
     
     </div> <!-- container -->
+
+    <!--
+    <input type="button" value="Load JSON">
+    <input type="button" value="Prior Country">
+    <input type="button" value="Next Country">
+    -->
+
+
+    <script src="assignment04.js"></script>
 </body>
 </html>

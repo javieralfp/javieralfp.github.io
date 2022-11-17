@@ -1,3 +1,9 @@
+/*
+Filename:    assignment04.js
+Author:      Javier Perez (japerez1@svsu.edu)
+Description: Arrow funtion practice & Scroll through covid data
+*/
+
 //PART 1 -------------------------------------------------------------------------------------------
 
 let arr1 = [101, 202, 303, 404, 505, 606, 707, 808, 909, 999]
@@ -91,7 +97,6 @@ g. Sum of the arctans of values in r (Arr5)
 */
 
 //a. Sum of all leapyears in Arr4, years
-console.log(arr4)
 console.log(
     arr4
         .filter(e => leapYear(e))
@@ -108,12 +113,21 @@ console.log(
 )
 
 //c. Dot product of Arr1, Arr2
-//multiply and then add
-console.log(
-    //arr1.map(e => e + arr2)
-    //arr1.filter(a => e + arr2)
-    //HELPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
-)
+for(let i = 0; i < arr1.length; i++){
+    arr1.map(e => e * arr2[i])
+}
+for(let i = 0; i < arr1.length; i++){
+    //console.log(arr1.reduce((a, b) => a + b))
+}
+let n = 0
+for(let i = 0; i < arr1.length; i++){
+    n += arr1[i] * arr2[i]
+}
+for(let i = 0; i < arr1.length; i++){
+    n += arr1[i] + arr2[i]
+}
+console.log(n)
+//console.log(arr1.reduce((a, b) => a + b))
 
 //d. Sum of all even numbers in Arr2
 console.log(
@@ -139,10 +153,76 @@ console.log(
         .reduce((a, b) => a + b)
 )
 
+//PART 2 -------------------------------------------------------------------------------------------
 
+//Create the click events for the three buttons
+document.getElementById("loadjson").addEventListener("click", loadJSON);
+document.getElementById("prior").addEventListener("click", prior);
+document.getElementById("next").addEventListener("click", next);
 
+let country = 0
+let json
+function loadJSON() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange 
+    = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("JSON data loaded :)")
 
+            //Update information
+            document.getElementById("ID").setAttribute("value", "---")
+            document.getElementById("Country").setAttribute("value", "---")
+            document.getElementById("CountryCode").setAttribute("value", "---")
+            document.getElementById("Slug").setAttribute("value", "---")
+            document.getElementById("NewConfirmed").setAttribute("value", "---")
+            document.getElementById("TotalConfirmed").setAttribute("value", "---")
+            document.getElementById("NewDeaths").setAttribute("value", "---")
+            document.getElementById("TotalDeaths").setAttribute("value", "---")
+            document.getElementById("NewRecovered").setAttribute("value", "---")
+            document.getElementById("TotalRecovered").setAttribute("value", "---")
+            document.getElementById("Date").setAttribute("value", "---")
 
+          json = JSON.parse(this.responseText);
+        }
+      };
+  xhttp.open("GET", "https://api.covid19api.com/summary", true);
+  xhttp.send();
+}
 
+function prior () {
+  country--
+  if (country < 0) 
+    country = 0
+  
+    //Update information
+    document.getElementById("ID").setAttribute("value", json.Countries[country].ID)
+    document.getElementById("Country").setAttribute("value", json.Countries[country].Country)
+    document.getElementById("CountryCode").setAttribute("value", json.Countries[country].CountryCode)
+    document.getElementById("Slug").setAttribute("value", json.Countries[country].Slug)
+    document.getElementById("NewConfirmed").setAttribute("value", json.Countries[country].NewConfirmed)
+    document.getElementById("TotalConfirmed").setAttribute("value", json.Countries[country].TotalConfirmed)
+    document.getElementById("NewDeaths").setAttribute("value", json.Countries[country].NewDeaths)
+    document.getElementById("TotalDeaths").setAttribute("value", json.Countries[country].TotalDeaths)
+    document.getElementById("NewRecovered").setAttribute("value", json.Countries[country].NewRecovered)
+    document.getElementById("TotalRecovered").setAttribute("value", json.Countries[country].TotalRecovered)
+    document.getElementById("Date").setAttribute("value", json.Countries[country].Date)
+}
 
+function next () {
+  country++
+  if (country > json.Countries.length - 1)
+    country = json.Countries.length - 1
 
+    //Update information
+    document.getElementById("ID").setAttribute("value", json.Countries[country].ID)
+    document.getElementById("Country").setAttribute("value", json.Countries[country].Country)
+    document.getElementById("CountryCode").setAttribute("value", json.Countries[country].CountryCode)
+    document.getElementById("Slug").setAttribute("value", json.Countries[country].Slug)
+    document.getElementById("NewConfirmed").setAttribute("value", json.Countries[country].NewConfirmed)
+    document.getElementById("TotalConfirmed").setAttribute("value", json.Countries[country].TotalConfirmed)
+    document.getElementById("NewDeaths").setAttribute("value", json.Countries[country].NewDeaths)
+    document.getElementById("TotalDeaths").setAttribute("value", json.Countries[country].TotalDeaths)
+    document.getElementById("NewRecovered").setAttribute("value", json.Countries[country].NewRecovered)
+    document.getElementById("TotalRecovered").setAttribute("value", json.Countries[country].TotalRecovered)
+    document.getElementById("Date").setAttribute("value", json.Countries[country].Date)
+}
