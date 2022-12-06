@@ -14,15 +14,16 @@ Using code from this link: https://codepen.io/gpcorser/pen/pogEQJw?editors=1010
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Assignment06</title>
 		<title>College Debt Estimator</title>
-		<!-- bootstrap 4 -->
+		<!-- Using bootstrap to make default the css so that it's easier to use -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-		<!-- custom css -->
+		<!-- Our own css separate from the bootstrap to align the text in the table and make the table pink -->
 		<style>
         td, th, td input {text-align: right;}
         #loan_table {background-color: pink;}
 		</style>
 	</head>
 
+	<!-- Make the html with jQuery so that it's easier and less repetitive for us to make -->
 	<body onload="loadDoc();">
 
 		<div class="container">
@@ -177,13 +178,13 @@ Using code from this link: https://codepen.io/gpcorser/pen/pogEQJw?editors=1010
 
 		</div>
 
-		<!--- jquery 3.4.1 -->
+		<!--- Our jQuery cdn to load in -->
 		<script
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous">
 		</script>
-		<!--- angular 1.6.9 -->
+		<!--- Our Angular cdn to load in -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	</body>
 </html>
